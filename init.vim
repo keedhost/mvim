@@ -46,10 +46,13 @@ call plug#begin("~/.config/nvim/plugged")
  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
  Plug 'junegunn/fzf.vim'
  Plug 'Yggdroot/indentLine'
+ Plug 'nvim-lua/popup.nvim'
  Plug 'nvim-lua/plenary.nvim'
  Plug 'nvim-telescope/telescope.nvim'
  Plug 'tpope/vim-fugitive'
  Plug 'junegunn/gv.vim'
+ Plug 'neovim/nvim-lspconfig'
+ Plug 'kyazdani42/nvim-web-devicons'
 call plug#end()
 
 colo seoul256
@@ -66,3 +69,9 @@ let g:indentLine_color_dark = 1 " (default: 2)
 " Background (Vim, GVim)
 let g:indentLine_bgcolor_term = 202
 let g:indentLine_bgcolor_gui = '#FF5F00'
+
+nnoremap <silent> ;f <cmd>Telescope find_files<cr>
+nnoremap <silent> ;r <cmd>Telescope live_grep<cr>
+nnoremap <silent> \\ <cmd>Telescope buffers<cr>
+nnoremap <silent> ;; <cmd>Telescope help_tags<cr>
+
